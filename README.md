@@ -61,3 +61,18 @@ Se recomienda reemplazar este README por uno personalizado donde se explique el 
 La solución puede compartirse en Frontend Mentor, redes sociales o comunidades de desarrollo para recibir feedback.
 
 **¡Que lo disfrutes y sigas practicando!** 🚀
+
+## 🛠️ Instalación y uso del proyecto
+
+Este proyecto utiliza **Tailwind CSS** mediante su CLI.
+
+### 📦 Requisitos
+- Tener instalado **Node.js** (incluye npm)
+
+### 🚀 Pasos para iniciar el proyecto
+
+1. Instalar las dependencias del proyecto:
+
+```bash
+npm install
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
