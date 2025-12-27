@@ -20,14 +20,10 @@
             class="grupo-inputs flex flex-wrap justify-center lg:justify-start gap-6"
           >
             <!-- Día -->
-            <div class="campo flex flex-col">
-              <label
-                for="dia"
-                class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1"
-                >DÍA</label
-              >
+            <div class="seccion-fecha">
+              <label for="dia" class="label-fecha">DÍA</label>
               <input
-                class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
+                class="input-fecha"
                 type="number"
                 id="dia"
                 placeholder="DD"
@@ -38,14 +34,10 @@
             </div>
 
             <!-- Mes -->
-            <div class="campo flex flex-col">
-              <label
-                for="mes"
-                class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1"
-                >MES</label
-              >
+            <div class="seccion-fecha">
+              <label for="mes" class="label-fecha">MES</label>
               <input
-                class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
+                class="input-fecha"
                 type="number"
                 id="mes"
                 placeholder="MM"
@@ -56,14 +48,10 @@
             </div>
 
             <!-- Año -->
-            <div class="campo flex flex-col">
-              <label
-                for="anio"
-                class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1"
-                >AÑO</label
-              >
+            <div class="seccion-fecha">
+              <label for="anio" class="label-fecha">AÑO</label>
               <input
-                class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
+                class="input-fecha"
                 type="number"
                 id="anio"
                 placeholder="YYYY"
@@ -81,10 +69,10 @@
             <button
               type="submit"
               aria-label="Calcular edad"
-              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-0 lg:translate-x-0 bg-[#844EFE] text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg lg:hover:bg-[#9467fa] lg:cursor-pointer lg:shadow-md lg:hover:shadow-lg lg:transition-all lg:duration-300 lg:ease-in-out"
+              class="btn-calcular absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-0 lg:translate-x-0 lg:hover:bg-[#9467fa] lg:cursor-pointer lg:shadow-md lg:hover:shadow-lg lg:ease-in-out"
             >
               <img
-                src="./assets/images/icon-arrow.svg"
+                src=" ./assets/images/icon-arrow.svg"
                 alt="icono flecha enviar"
                 class="w-6 h-6"
               />
@@ -95,36 +83,18 @@
         <!-- Resultado -->
         <section class="resultado">
           <p>
-            <span
-              id="resultado-anios"
-              class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl"
-              >44</span
-            >
-            <span class="text-black font-['Poppins'] italic font-bold text-5xl"
-              >Años</span
-            >
+            <span id="resultado-anios" class="resultado-num">44</span>
+            <span class="resultado-text">Años</span>
           </p>
 
           <p>
-            <span
-              id="resultado-meses"
-              class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl"
-              >44</span
-            >
-            <span class="text-black font-['Poppins'] italic font-bold text-5xl"
-              >Meses</span
-            >
+            <span id="resultado-meses" class="resultado-num">44</span>
+            <span class="resultado-text">Meses</span>
           </p>
 
           <p>
-            <span
-              id="resultado-dias"
-              class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl"
-              >44</span
-            >
-            <span class="text-black font-['Poppins'] italic font-bold text-5xl"
-              >Días</span
-            >
+            <span id="resultado-dias" class="resultado-num">44</span>
+            <span class="resultado-text">Días</span>
           </p>
         </section>
       </section>
