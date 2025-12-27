@@ -1,82 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- displays site properly based on user's device -->
-  <link href="./src/output.css" rel="stylesheet" />
-  <title>Frontend Mentor | Age calculator app</title>
-</head>
+  <body class="bg-[#F0F0F0] min-h-screen flex items-center justify-center">
+    <main
+      class="calculadora-edad bg-white flex flex-col w-11/12 px-5 py-8 rounded-3xl rounded-br-[60px] lg:w-full lg:max-w-xl lg:px-8 lg:py-10"
+    >
+      <!-- Tarjeta -->
+      <section class="card">
+        <!-- Formulario -->
+        <form id="form-fecha" novalidate>
+          <div
+            class="grupo-inputs flex flex-wrap justify-center lg:justify-start gap-6"
+          >
+            <!-- Día -->
+            <div class="campo flex flex-col">
+              <label
+                for="dia"
+                class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1"
+                >DÍA</label
+              >
+              <input
+                class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
+                type="number"
+                id="dia"
+                placeholder="DD"
+                min="1"
+                max="2"
+              />
+              <small class="error"></small>
+            </div>
 
-<body class="bg-[#F0F0F0] min-h-screen flex items-center justify-center">
-  <main class="calculadora-edad bg-white flex flex-col w-11/12 px-5 py-8 rounded-3xl rounded-br-[60px] lg:w-full lg:max-w-xl lg:px-8 lg:py-10">
-    <!-- Tarjeta -->
-    <section class="card">
-      <!-- Formulario -->
-      <form id="form-fecha" novalidate>
-        <div class="grupo-inputs flex flex-wrap justify-center lg:justify-start gap-6">
+            <!-- Mes -->
+            <div class="campo flex flex-col">
+              <label
+                for="mes"
+                class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1"
+                >MES</label
+              >
+              <input
+                class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
+                type="number"
+                id="mes"
+                placeholder="MM"
+                min="1"
+                max="12"
+              />
+              <small class="error"></small>
+            </div>
 
-          <!-- Día -->
-          <div class="campo flex flex-col">
-            <label for="dia" class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1">DÍA</label>
-            <input
-              class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
-              type="number" id="dia" placeholder="DD" min="1" max="31" />
-            <small class="error"></small>
+            <!-- Año -->
+            <div class="campo flex flex-col">
+              <label
+                for="anio"
+                class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1"
+                >AÑO</label
+              >
+              <input
+                class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
+                type="number"
+                id="anio"
+                placeholder="YYYY"
+              />
+              <small class="error"></small>
+            </div>
           </div>
 
-          <!-- Mes -->
-          <div class="campo flex flex-col">
-            <label for="mes" class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1">MES</label>
-            <input
-              class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
-              type="number" id="mes" placeholder="MM" min="1" max="12" />
-            <small class="error"></small>
+          <!-- Botón -->
+          <div class="relative my-14 lg:my-5">
+            <!-- Línea gris -->
+            <div class="w-full h-px bg-gray-300"></div>
+
+            <!-- Botón al final con SVG -->
+            <button
+              type="submit"
+              aria-label="Calcular edad"
+              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-0 lg:translate-x-0 bg-[#844EFE] text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg lg:hover:bg-[#9467fa] lg:cursor-pointer lg:shadow-md lg:hover:shadow-lg lg:transition-all lg:duration-300 lg:ease-in-out"
+            >
+              <img
+                src="./assets/images/icon-arrow.svg"
+                alt="icono flecha enviar"
+                class="w-6 h-6"
+              />
+            </button>
           </div>
+        </form>
 
-          <!-- Año -->
-          <div class="campo flex flex-col">
-            <label for="anio" class="text-gray-600 font-['Poppins'] font-bold text-xs mb-1">AÑO</label>
-            <input
-              class="border rounded-md border-gray-300 w-20 sm:w-24 md:w-28 h-11 pl-3 font-poppins font-extrabold text-lg"
-              type="number" id="anio" placeholder="YYYY" />
-            <small class="error"></small>
-          </div>
-        </div>
+        <!-- Resultado -->
+        <section class="resultado">
+          <p>
+            <span
+              id="resultado-anios"
+              class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl"
+              >44</span
+            >
+            <span class="text-black font-['Poppins'] italic font-bold text-5xl"
+              >Años</span
+            >
+          </p>
 
-        <!-- Botón -->
-        <div class="relative my-14 lg:my-5">
-          <!-- Línea gris -->
-          <div class="w-full h-px bg-gray-300"></div>
+          <p>
+            <span
+              id="resultado-meses"
+              class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl"
+              >44</span
+            >
+            <span class="text-black font-['Poppins'] italic font-bold text-5xl"
+              >Meses</span
+            >
+          </p>
 
-          <!-- Botón al final con SVG -->
-          <button type="submit" aria-label="Calcular edad"
-            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-0 lg:translate-x-0 bg-[#844EFE] text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
-            <img src="./assets/images/icon-arrow.svg" alt="icono flecha enviar" class="w-6 h-6" />
-          </button>
-        </div>
-      </form>
-
-      <!-- Resultado -->
-      <section class="resultado">
-        <p>
-          <span id="resultado-anios" class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl">44</span>
-          <span class="text-black font-['Poppins'] italic font-bold text-5xl">años</span>
-        </p>
-
-        <p>
-          <span id="resultado-meses" class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl">44</span>
-          <span class="text-black font-['Poppins'] italic font-bold text-5xl">meses</span>
-        </p>
-
-        <p>
-          <span id="resultado-dias" class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl">44</span>
-          <span class="text-black font-['Poppins'] italic font-bold text-5xl">días</span>
-        </p>
+          <p>
+            <span
+              id="resultado-dias"
+              class="text-[#844EFE] font-['Poppins'] italic font-bold text-6xl"
+              >44</span
+            >
+            <span class="text-black font-['Poppins'] italic font-bold text-5xl"
+              >Días</span
+            >
+          </p>
+        </section>
       </section>
-    </section>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>
