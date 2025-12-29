@@ -71,3 +71,17 @@
     @apply bg-[#844EFE] text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg lg:transition-all lg:duration-300;
   }
 }
+
+  /* mensaje de error */
+
+.input-error {
+  @apply border-red-500;
+}
+
+.label-error {
+  @apply text-red-500;
+}
+
+.text-error {
+  @apply text-red-500 text-xs mt-1;
+}
