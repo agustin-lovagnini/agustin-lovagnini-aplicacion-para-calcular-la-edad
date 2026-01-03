@@ -8,6 +8,16 @@ const resultadoAnios = document.getElementById("resultado-anios");
 const resultadoMeses = document.getElementById("resultado-meses");
 const resultadoDias = document.getElementById("resultado-dias");
 
+function limitarNumeros(input, maxLength) {
+    input.addEventListener("input", () => {
+        input.value = input.value.replace(/\D/g, "").slice(0, maxLength);
+    });
+}
+
+limitarNumeros(inputDia, 2);
+limitarNumeros(inputMes, 2);
+limitarNumeros(inputAnio, 4);
+
 function mostrarError(input, mensaje) {
     const contenedor = input.parentElement;
     const small = contenedor.querySelector(".error");
@@ -15,6 +25,7 @@ function mostrarError(input, mensaje) {
     input.classList.add("border-red-500");
     small.textContent = mensaje;
     small.classList.remove("hidden");
+    small.classList.add("text-red-500");
 }
 
 function limpiarError(input) {
@@ -24,6 +35,7 @@ function limpiarError(input) {
     input.classList.remove("border-red-500");
     small.textContent = "";
     small.classList.add("hidden");
+    small.classList.remove("text-red-500");
 }
 
 // Escuchamos el evento submit
