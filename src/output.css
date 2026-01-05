@@ -16,6 +16,8 @@
     --container-xl: 36rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
@@ -196,8 +198,17 @@
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
+  .my-5 {
+    margin-block: calc(var(--spacing) * 5);
+  }
   .my-14 {
     margin-block: calc(var(--spacing) * 14);
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .block {
+    display: block;
   }
   .flex {
     display: flex;
@@ -270,6 +281,17 @@
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
+  .text-center {
+    text-align: center;
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
   .text-red-500 {
     color: var(--color-red-500);
   }
@@ -286,6 +308,16 @@
   .lg\:my-5 {
     @media (width >= 64rem) {
       margin-block: calc(var(--spacing) * 5);
+    }
+  }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
+  .lg\:hidden {
+    @media (width >= 64rem) {
+      display: none;
     }
   }
   .lg\:w-full {
@@ -467,18 +499,18 @@
       transition-duration: 300ms;
     }
   }
-}
-.input-error {
-  border-color: var(--color-red-500);
-}
-.label-error {
-  color: var(--color-red-500);
-}
-.text-error {
-  margin-top: calc(var(--spacing) * 1);
-  font-size: var(--text-xs);
-  line-height: var(--tw-leading, var(--text-xs--line-height));
-  color: var(--color-red-500);
+  .input-error {
+    border-color: var(--color-red-500);
+  }
+  .label-error {
+    color: var(--color-red-500);
+  }
+  .text-error {
+    margin-top: calc(var(--spacing) * 1);
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+    color: var(--color-red-500);
+  }
 }
 @property --tw-translate-x {
   syntax: "*";

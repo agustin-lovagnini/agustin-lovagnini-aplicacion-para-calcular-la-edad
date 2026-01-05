@@ -7,6 +7,7 @@ const inputAnio = document.getElementById("anio");
 const resultadoAnios = document.getElementById("resultado-anios");
 const resultadoMeses = document.getElementById("resultado-meses");
 const resultadoDias = document.getElementById("resultado-dias");
+const mensajeError = document.getElementById("mensaje-error");
 
 function limitarNumeros(input, maxLength) {
     input.addEventListener("input", () => {
@@ -19,32 +20,29 @@ limitarNumeros(inputMes, 2);
 limitarNumeros(inputAnio, 4);
 
 function mostrarError(input, mensaje) {
-    const contenedor = input.parentElement;
-    const small = contenedor.querySelector(".error");
-
     input.classList.add("border-red-500");
-    small.textContent = mensaje;
-    small.classList.remove("hidden");
-    small.classList.add("text-red-500");
+    const errorIndividual = input.parentElement.querySelector(".error-individual");
+    if (errorIndividual) {
+        errorIndividual.textContent = mensaje;
+    }
+    mensajeError.textContent = mensaje;
 }
 
-function limpiarError(input) {
-    const contenedor = input.parentElement;
-    const small = contenedor.querySelector(".error");
-
-    input.classList.remove("border-red-500");
-    small.textContent = "";
-    small.classList.add("hidden");
-    small.classList.remove("text-red-500");
+function limpiarErrores() {
+    inputDia.classList.remove("border-red-500");
+    inputMes.classList.remove("border-red-500");
+    inputAnio.classList.remove("border-red-500");
+    document.querySelectorAll(".error-individual").forEach(error => {
+        error.textContent = "";
+    });
+    mensajeError.textContent = "";
 }
 
 // Escuchamos el evento submit
 form.addEventListener("submit", function (event) {
     event.preventDefault(); // evita que se recargue la página
 
-    limpiarError(inputDia);
-    limpiarError(inputMes);
-    limpiarError(inputAnio);
+    limpiarErrores();
 
     const dia = Number(inputDia.value);
     const mes = Number(inputMes.value);

@@ -21,23 +21,25 @@
           <div class="seccion-fecha">
             <label for="dia" class="label-fecha">DÍA</label>
             <input class="input-fecha" type="text" id="dia" inputmode="numeric" maxlength="2" placeholder="DD" />
-            <small class="error"></small>
+            <small class="error-individual hidden lg:block text-red-500 text-xs mt-1"></small>
           </div>
 
           <!-- Mes -->
           <div class="seccion-fecha">
             <label for="mes" class="label-fecha">MES</label>
             <input class="input-fecha" type="text" id="mes" placeholder="MM" maxlength="2" />
-            <small class="error"></small>
+            <small class="error-individual hidden lg:block text-red-500 text-xs mt-1"></small>
           </div>
 
           <!-- Año -->
           <div class="seccion-fecha">
             <label for="anio" class="label-fecha">AÑO</label>
             <input class="input-fecha" type="text" id="anio" maxlength="4" placeholder="YYYY" />
-            <small class="error"></small>
+            <small class="error-individual hidden lg:block text-red-500 text-xs mt-1"></small>
           </div>
         </div>
+
+        <small id="mensaje-error" class="text-red-500 text-base my-5 block text-center w-full lg:hidden"></small>
 
         <!-- Botón -->
         <div class="relative my-14 lg:my-5">
