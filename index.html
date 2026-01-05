@@ -1,78 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <script src="./src/script.js" defer></script>
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./src/output.css" rel="stylesheet" />
-  <script src="srctip.js" defer></script>
-  <title>Frontend Mentor | Age calculator app</title>
-</head>
+  <body class="bg-[#F0F0F0] min-h-screen flex items-center justify-center">
+    <main
+      class="calculadora-edad bg-white flex flex-col w-11/12 px-5 py-8 rounded-3xl rounded-br-[60px] lg:w-full lg:max-w-xl lg:px-8 lg:py-10"
+    >
+      <!-- Tarjeta -->
+      <section class="card">
+        <!-- Formulario -->
+        <form id="form-fecha" novalidate>
+          <div
+            class="grupo-inputs flex flex-wrap justify-center lg:justify-start gap-6"
+          >
+            <!-- Día -->
+            <div class="seccion-fecha">
+              <label for="dia" class="label-fecha">DÍA</label>
+              <input
+                class="input-fecha"
+                type="text"
+                id="dia"
+                inputmode="numeric"
+                maxlength="2"
+                placeholder="DD"
+                aria-invalid="false"
+                
+              />
+            </div>
 
-<body class="bg-[#F0F0F0] min-h-screen flex items-center justify-center">
-  <main
-    class="calculadora-edad bg-white flex flex-col w-11/12 px-5 py-8 rounded-3xl rounded-br-[60px] lg:w-full lg:max-w-xl lg:px-8 lg:py-10">
-    <!-- Tarjeta -->
-    <section class="card">
-      <!-- Formulario -->
-      <form id="form-fecha" novalidate>
-        <div class="grupo-inputs flex flex-wrap justify-center lg:justify-start gap-6">
-          <!-- Día -->
-          <div class="seccion-fecha">
-            <label for="dia" class="label-fecha">DÍA</label>
-            <input class="input-fecha" type="text" id="dia" inputmode="numeric" maxlength="2" placeholder="DD" />
-            <small class="error-individual hidden lg:block text-red-500 text-xs mt-1"></small>
+            <!-- Mes -->
+            <div class="seccion-fecha">
+              <label for="mes" class="label-fecha">MES</label>
+              <input
+                class="input-fecha"
+                type="text"
+                id="mes"
+                placeholder="MM"
+                maxlength="2"
+                aria-invalid="false"
+                
+              />
+            </div>
+
+            <!-- Año -->
+            <div class="seccion-fecha">
+              <label for="anio" class="label-fecha">AÑO</label>
+              <input
+                class="input-fecha"
+                type="text"
+                id="anio"
+                maxlength="4"
+                placeholder="YYYY"
+                aria-invalid="false"
+              />
+            </div>
           </div>
 
-          <!-- Mes -->
-          <div class="seccion-fecha">
-            <label for="mes" class="label-fecha">MES</label>
-            <input class="input-fecha" type="text" id="mes" placeholder="MM" maxlength="2" />
-            <small class="error-individual hidden lg:block text-red-500 text-xs mt-1"></small>
+          <small
+            id="mensaje-error"
+            class="text-red-500 text-base my-5 block text-center w-full" role="alert"
+          ></small>
+
+          <!-- Botón -->
+          <div class="relative my-14 lg:my-5">
+            <!-- Línea gris -->
+            <div class="w-full h-px bg-gray-300"></div>
+
+            <!-- Botón al final con SVG -->
+            <button
+              type="submit"
+              aria-label="Calcular edad"
+              class="btn-calcular absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-0 lg:translate-x-0 lg:hover:bg-[#9467fa] lg:cursor-pointer lg:shadow-md lg:hover:shadow-lg lg:ease-in-out"
+            >
+              <img
+                src=" ./recursos/images/icon-arrow.svg"
+                alt="icono flecha enviar"
+                class="w-6 h-6"
+              />
+            </button>
           </div>
+        </form>
 
-          <!-- Año -->
-          <div class="seccion-fecha">
-            <label for="anio" class="label-fecha">AÑO</label>
-            <input class="input-fecha" type="text" id="anio" maxlength="4" placeholder="YYYY" />
-            <small class="error-individual hidden lg:block text-red-500 text-xs mt-1"></small>
-          </div>
-        </div>
+        <!-- Resultado -->
+        <section class="resultado">
+          <p>
+            <span id="resultado-anios" class="resultado-num">--</span>
+            <span class="resultado-text">Años</span>
+          </p>
 
-        <small id="mensaje-error" class="text-red-500 text-base my-5 block text-center w-full lg:hidden"></small>
+          <p>
+            <span id="resultado-meses" class="resultado-num">--</span>
+            <span class="resultado-text">Meses</span>
+          </p>
 
-        <!-- Botón -->
-        <div class="relative my-14 lg:my-5">
-          <!-- Línea gris -->
-          <div class="w-full h-px bg-gray-300"></div>
-
-          <!-- Botón al final con SVG -->
-          <button type="submit" aria-label="Calcular edad"
-            class="btn-calcular absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-0 lg:translate-x-0 lg:hover:bg-[#9467fa] lg:cursor-pointer lg:shadow-md lg:hover:shadow-lg lg:ease-in-out">
-            <img src=" ./recursos/images/icon-arrow.svg" alt="icono flecha enviar" class="w-6 h-6" />
-          </button>
-        </div>
-      </form>
-
-      <!-- Resultado -->
-      <section class="resultado">
-        <p>
-          <span id="resultado-anios" class="resultado-num">--</span>
-          <span class="resultado-text">Años</span>
-        </p>
-
-        <p>
-          <span id="resultado-meses" class="resultado-num">--</span>
-          <span class="resultado-text">Meses</span>
-        </p>
-
-        <p>
-          <span id="resultado-dias" class="resultado-num">--</span>
-          <span class="resultado-text">Días</span>
-        </p>
+          <p>
+            <span id="resultado-dias" class="resultado-num">--</span>
+            <span class="resultado-text">Días</span>
+          </p>
+        </section>
       </section>
-    </section>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>

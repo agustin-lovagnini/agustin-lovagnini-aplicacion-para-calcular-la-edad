@@ -21,10 +21,6 @@ limitarNumeros(inputAnio, 4);
 
 function mostrarError(input, mensaje) {
     input.classList.add("border-red-500");
-    const errorIndividual = input.parentElement.querySelector(".error-individual");
-    if (errorIndividual) {
-        errorIndividual.textContent = mensaje;
-    }
     mensajeError.textContent = mensaje;
 }
 
@@ -32,9 +28,6 @@ function limpiarErrores() {
     inputDia.classList.remove("border-red-500");
     inputMes.classList.remove("border-red-500");
     inputAnio.classList.remove("border-red-500");
-    document.querySelectorAll(".error-individual").forEach(error => {
-        error.textContent = "";
-    });
     mensajeError.textContent = "";
 }
 
@@ -79,6 +72,16 @@ form.addEventListener("submit", function (event) {
     }
 
     const fechaNacimiento = new Date(anio, mes - 1, dia);
+
+    if (
+        fechaNacimiento.getFullYear() !== anio ||
+        fechaNacimiento.getMonth() !== mes - 1 ||
+        fechaNacimiento.getDate() !== dia
+    ) {
+        mostrarError(inputDia, "La fecha ingresada no es válida");
+        return;
+    }
+
     const hoy = new Date();
 
     if (fechaNacimiento > hoy) {
