@@ -1,78 +1,69 @@
-# Frontend Mentor - Age Calculator App
+# 📅 Calculadora de Edad
 
-![Vista previa del diseño](preview.jpg)
+Una aplicación web elegante y funcional para calcular tu edad exacta en años, meses y días. Desarrollada con HTML, CSS (Tailwind CSS) y JavaScript vanilla.
 
-## 👋 Bienvenido
+![Vista previa desktop](./recursos/images/vista-previa/vista-desktop.png)
 
-Este proyecto forma parte de un desafío de **Frontend Mentor**, una plataforma para mejorar habilidades de frontend creando proyectos reales.
+Ingresa tu fecha de nacimiento y obtén instantáneamente tu edad exacta desglosada en años, meses y días. Incluye validación completa de fechas y manejo de errores intuitivo.
 
-Para este desafío se requiere conocimiento básico de **HTML, CSS y JavaScript**.
+## ✨ Características
 
-## 🎯 El desafío
+- ✅ Validación completa de fechas (días, meses y años)
+- 🎯 Cálculo preciso de edad en años, meses y días
+- 🚫 Prevención de fechas futuras e inválidas
+- 📱 Diseño responsive (mobile-first)
+- ♿ Accesibilidad con atributos ARIA
+- 🎨 Interfaz moderna con Tailwind CSS
+- ⚡ Feedback visual instantáneo para errores
 
-Construir una aplicación que calcule la edad del usuario a partir de una fecha ingresada, respetando el diseño provisto.
+## 🖼️ Capturas de pantalla
 
-## 🚀 Funcionalidades
+### Vista Desktop
+![Vista desktop](./recursos/images/vista-previa/vista-desktop.png)
 
-Los usuarios pueden:
+### Vista Mobile
+<img src="./recursos/images/vista-previa/vista-mobile.png" alt="Vista mobile" width="375">
 
-- Ver su edad expresada en **años, meses y días**
-- Recibir mensajes de error si:
-  - Algún campo está vacío
-  - El día no está entre 1 y 31
-  - El mes no está entre 1 y 12
-  - La fecha es futura
-  - La fecha es inválida (ej: 31/04/1991)
-- Ver un diseño responsive según el tamaño de pantalla
-- Ver estados hover y focus en los elementos interactivos
-- *(Bonus)* Animación en los números del resultado
+### Estado de error
+<img src="./recursos/images/vista-previa/vista-mobile-error.png" alt="Vista mobile con error" width="375">
 
-## 📁 Recursos del proyecto
+## 🛠️ Tecnologías utilizadas
 
-- Los diseños (mobile y desktop) están en la carpeta `/design`
-- Los assets (imágenes y fuentes) están en `/assets`
-- La guía de estilos está en `style-guide.md`
-- El diseño se entrega en formato JPG
+- **HTML5** - Estructura semántica
+- **Tailwind CSS** - Estilización mediante utilidades
+- **JavaScript ES6+** - Lógica y validación
+- **Fuente Poppins** - Tipografía
 
-## 🛠️ Desarrollo
-
-El flujo recomendado fue:
-
-1. Analizar los diseños
-2. Estructurar el HTML
-3. Aplicar estilos base
-4. Completar el diseño sección por sección
-5. Implementar la lógica en JavaScript
-
-## 🌐 Deploy
-
-El proyecto puede desplegarse en:
-
-- GitHub Pages
-- Vercel
-- Netlify
-
-## 📦 README personalizado
-
-Se recomienda reemplazar este README por uno personalizado donde se explique el proyecto, tecnologías usadas y aprendizajes.
-
-## 🚀 Envío de la solución
-
-La solución puede compartirse en Frontend Mentor, redes sociales o comunidades de desarrollo para recibir feedback.
-
-**¡Que lo disfrutes y sigas practicando!** 🚀
-
-## 🛠️ Instalación y uso del proyecto
+## 🚀 Instalación y uso del proyecto
 
 Este proyecto utiliza **Tailwind CSS** mediante su CLI.
 
-### 📦 Requisitos
-- Tener instalado **Node.js** (incluye npm)
+### 📦 Requisitos previos
 
-### 🚀 Pasos para iniciar el proyecto
+- Tener instalado **Node.js** (versión 14 o superior, incluye npm)
 
-1. Instalar las dependencias del proyecto:
+### 🔧 Pasos para iniciar el proyecto
 
+**Instalar las dependencias**
 ```bash
-npm install
-npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+   npm install
+```
+
+**Compilar Tailwind CSS en modo watch** (para desarrollo)
+```bash
+   npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+```
+
+## 🎯 Funcionalidades
+
+### Validaciones
+- ✔️ Campos obligatorios y rangos válidos (día: 1-31, mes: 1-12, año: desde 1900)
+- ✔️ Verificación de fechas reales (considera meses con diferentes días)
+- ✔️ Prevención de fechas futuras
+- ✔️ Solo acepta números
+
+## 💻 Uso
+
+1. Ingresa tu fecha de nacimiento (DD/MM/AAAA)
+2. Haz clic en el botón de flecha o presiona Enter
+3. Visualiza tu edad desglosada en años, meses y días
